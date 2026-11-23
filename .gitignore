@@ -1,0 +1,12 @@
+# Dependencias (se reinstalan con npm ci)
+node_modules/
+
+# Secretos y configuración local
+.env
+*.key
+*.pem
+
+# Registros y temporales
+*.log
+coverage/
+.DS_Store
