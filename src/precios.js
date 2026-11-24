@@ -10,4 +10,14 @@ function calcularIVA(importe, tipo) {
   return (importe * tipo) / 100;
 }
 
-module.exports = { calcularSubtotal, aplicarDescuento, calcularIVA };
+function calcularPrecioFinal(precio, cantidad, descuento, tipoIVA) {
+  const base = aplicarDescuento(calcularSubtotal(precio, cantidad), descuento);
+  return base + calcularIVA(base, tipoIVA);
+}
+
+module.exports = {
+  calcularSubtotal,
+  aplicarDescuento,
+  calcularIVA,
+  calcularPrecioFinal,
+};
