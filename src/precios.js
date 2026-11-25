@@ -7,7 +7,7 @@ function aplicarDescuento(importe, porcentaje) {
 }
 
 function calcularIVA(importe, tipo) {
-  return Math.round(((importe * tipo) / 100) * 100) / 100;
+  return importe > 0 ? Math.round(((importe * tipo) / 100) * 100) / 100 : 0;
 }
 
 function calcularPrecioFinal(precio, cantidad, descuento, tipoIVA) {
