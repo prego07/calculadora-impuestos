@@ -1,0 +1,38 @@
+name: Integración continua
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Revisar el estilo del código (linter)
+        run: npm run lint
+
+      - name: Ejecutar los tests
+        run: npm test
+
+      - name: Generar la documentación
+        run: npx jsdoc src -d docs/api
+
+      - name: Guardar la documentación como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentacion
+          path: docs/api
