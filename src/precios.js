@@ -6,7 +6,7 @@
  * @returns {number} Importe total antes de descuentos e IVA.
  */
 function calcularSubtotal(precio, cantidad) {
-  return precio + cantidad;
+  return precio * cantidad;
 }
 
 /**
