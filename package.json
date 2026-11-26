@@ -4,12 +4,14 @@
   "description": "Pequeña librería en JavaScript para calcular precios de pedidos: subtotales, descuentos e impuestos.",
   "main": "src/precios.js",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "eslint": "^10.15.0",
     "jsdoc": "^4.0.5"
   }
